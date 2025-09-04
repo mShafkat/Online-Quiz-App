@@ -2,7 +2,7 @@
 include('includes/db.php');
 session_start();
 
-$quiz_id = $_POST['quiz_id'];  // Assuming you pass quiz_id from quiz.php
+$quiz_id = $_POST['quiz_id'];  
 foreach ($_POST as $key => $value) {
     if (strpos($key, 'q') === 0) {
         $question_id = substr($key, 1);

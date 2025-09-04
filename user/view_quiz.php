@@ -2,7 +2,7 @@
 session_start();
 include('../includes/db.php');
 
-// Check if quiz_id is provided in the URL
+
 if (!isset($_GET['quiz_id']) || empty($_GET['quiz_id'])) {
     echo "Quiz not found.";
     exit();
@@ -10,18 +10,18 @@ if (!isset($_GET['quiz_id']) || empty($_GET['quiz_id'])) {
 
 $quiz_id = $_GET['quiz_id'];
 
-// Fetch quiz details
+
 $stmt = $pdo->prepare("SELECT * FROM quizzes WHERE id = ?");
 $stmt->execute([$quiz_id]);
 $quiz = $stmt->fetch();
 
-// If quiz doesn't exist
+
 if (!$quiz) {
     echo "Quiz not found.";
     exit();
 }
 
-// Fetch questions and answers for the quiz
+
 $stmt = $pdo->prepare("SELECT * FROM questions WHERE quiz_id = ?");
 $stmt->execute([$quiz_id]);
 $questions = $stmt->fetchAll();

@@ -36,6 +36,6 @@ define('UPLOAD_DIR', __DIR__ . '/../uploads/'); // Directory for storing file up
 // Google Analytics Tracking ID (Optional)
 define('GA_TRACKING_ID', 'UA-XXXXXX-X');
 
-// Other settings that might be relevant for the app
+
 
 ?>
